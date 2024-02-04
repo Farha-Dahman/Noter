@@ -14,3 +14,64 @@ document.addEventListener("mousemove", (event) => {
   prevX = mouseX;
   prevY = mouseY;
 });
+
+const btnAdd = document.querySelector(".btn-add");
+const noteContainer = document.querySelector(".note-container");
+const notes = JSON.parse(localStorage.getItem("notes"));
+
+if (notes) {
+  notes.forEach((noteTxt) => addNote(noteTxt));
+}
+
+if (btnAdd) {
+  btnAdd.addEventListener("click", () => addNote());
+}
+
+function addNote(text = "") {
+  const note = document.createElement("div");
+  note.classList.add("note-wrapper");
+  note.innerHTML = `
+    <div class="operations d-flex justify-content-end p-2">
+      <button class="edit mx-1 mt-1" type="button" title="Edit">
+        <i class="fas fa-edit"></i>
+      </button>
+      <button class="delete mx-1 mt-1" type="button" title="Delete">
+        <i class="fas fa-trash-alt"></i>
+      </button>
+    </div> 
+    <div class="main ${text ? "" : "hidden"}"></div>
+    <textarea title="Note content" class="${text ? "hidden" : ""}"></textarea>
+  `;
+
+  const editBtn = note.querySelector(".edit");
+  const deleteBtn = note.querySelector(".delete");
+  const mainEle = note.querySelector(".main");
+  const textareaEle = note.querySelector("textarea");
+
+  textareaEle.value = text;
+  mainEle.innerHTML = text;
+
+  deleteBtn.addEventListener("click", () => {
+    note.remove();
+    updates();
+  });
+
+  editBtn.addEventListener("click", () => {
+    mainEle.classList.toggle("hidden");
+    textareaEle.classList.toggle("hidden");
+  });
+
+  textareaEle.addEventListener("input", (e) => {
+    const { value } = e.target;
+    mainEle.innerHTML = value;
+    updates();
+  });
+  noteContainer.appendChild(note);
+}
+
+function updates() {
+  const noteText = document.querySelectorAll("textarea");
+  const notes = [];
+  noteText.forEach((note) => notes.push(note.value));
+  localStorage.setItem("notes", JSON.stringify(notes));
+}

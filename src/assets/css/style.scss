@@ -4,6 +4,7 @@ $background-color-light: #fff;
 $background-color-dark: #000000;
 $background-color-gray: #333333;
 $primary-color: #9869a3;
+$primary-color-noter: #51265a;
 $background-color-span: #a03cb65d;
 $background-color-transparent: #af5ac22f;
 // Text colors
@@ -444,5 +445,80 @@ ul {
     .footer-content {
         float: none;
         width: 100%;
+    }
+}
+
+/* noter page */
+.noter-body {
+    background-color: $background-color-transparent;
+    .noter-nav {
+        background-color: $primary-color;
+        height: 110px;
+    }
+    .noter-img {
+        width: 100px;
+        height: 90px;
+    }
+    .noter-container {
+        display: flex;
+        flex-wrap: wrap;
+        .btn-add {
+            outline: none;
+            background-color: $primary-color;
+            color: $text-color-light;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                color: $background-color-dark;
+                background-color: $background-color-span;
+            }
+        }
+        .note-wrapper {
+            background-color: $background-color-light;
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            height: 200px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin: 20px;
+            .operations {
+                background: $primary-color-noter;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                button {
+                    border: none;
+                    background: transparent;
+                    cursor: pointer;
+                    font-size: 1.1rem;
+                    color: $background-color-light;
+                    &:hover {
+                        color: $background-color-dark;
+                    }
+                }
+            }
+            textarea {
+                outline: none;
+                border: none;
+                resize: none;
+                font-family: inherit;
+                font-size: 1.2rem;
+                width: 100%;
+                height: 155px;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            .main {
+                padding: 10px;
+            }
+            .hidden {
+                display: none;
+            }
+        }
+    }
+    .note-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

@@ -415,5 +415,79 @@ ul {
     width: 100%;
   }
 }
+/* noter page */
+.noter-body {
+  background-color: rgba(175, 90, 194, 0.1843137255);
+}
+.noter-body .noter-nav {
+  background-color: #9869a3;
+  height: 110px;
+}
+.noter-body .noter-img {
+  width: 100px;
+  height: 90px;
+}
+.noter-body .noter-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.noter-body .noter-container .btn-add {
+  outline: none;
+  background-color: #9869a3;
+  color: #ffffff;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.noter-body .noter-container .btn-add:hover {
+  color: #000000;
+  background-color: rgba(160, 60, 182, 0.3647058824);
+}
+.noter-body .noter-container .note-wrapper {
+  background-color: #fff;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 200px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin: 20px;
+}
+.noter-body .noter-container .note-wrapper .operations {
+  background: #51265a;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.noter-body .noter-container .note-wrapper .operations button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.noter-body .noter-container .note-wrapper .operations button:hover {
+  color: #000000;
+}
+.noter-body .noter-container .note-wrapper textarea {
+  outline: none;
+  border: none;
+  resize: none;
+  font-family: inherit;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 155px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.noter-body .noter-container .note-wrapper .main {
+  padding: 10px;
+}
+.noter-body .noter-container .note-wrapper .hidden {
+  display: none;
+}
+.noter-body .note-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=style.css.map */
