@@ -9,10 +9,46 @@ document.addEventListener("mousemove", (event) => {
   const moveX = mouseX - prevX;
   const moveY = mouseY - prevY;
 
-  moveDiv.style.transform = `translate(${moveX / 2}px, ${moveY / 4}px)`;
+  moveDiv.style.transform = `translate(${moveX / 4}px, ${moveY / 4}px)`;
 
   prevX = mouseX;
   prevY = mouseY;
+});
+
+$(".header-content").slideDown(3000);
+
+$(document).ready(function () {
+  $(".feature-card").hover(
+    function () {
+      $(this).css("transform", "scale(1.1)");
+    },
+    function () {
+      $(this).css("transform", "scale(1)");
+    }
+  );
+});
+
+$(document).ready(function () {
+  $(window).scroll(function () {
+    var windowHeight = $(window).height();
+    var scrollPosition = $(window).scrollTop();
+
+    $(".feature-section").each(function () {
+      var offset = $(this).offset().top;
+
+      if (scrollPosition > offset - windowHeight + 200) {
+        $(this).addClass("show");
+      }
+    });
+  });
+});
+
+$(document).ready(function () {
+  AOS.init({
+    duration: 1200,
+    delay: 200,
+    once: true,
+  });
 });
 
 const btnAdd = document.querySelector(".btn-add");

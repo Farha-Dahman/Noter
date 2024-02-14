@@ -52,6 +52,7 @@ ul {
   padding: 50px 0;
 }
 .header .header-content {
+  display: none;
   padding: 20px;
   width: 730px;
 }
@@ -113,6 +114,9 @@ ul {
 /* start feature section */
 .feature-section {
   padding-top: 75px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .feature-section .feature-card {
   margin-bottom: 25px;
@@ -145,6 +149,11 @@ ul {
 .feature-section .line {
   color: #9869a3;
   opacity: 0.1;
+}
+
+.feature-section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* start about section*/
